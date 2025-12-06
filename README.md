@@ -1,4 +1,4 @@
-I-AHRS | The Integrated Airline and Hotel Reservation System
+**I-AHRS | The Integrated Airline and Hotel Reservation System**
 
 A system that combines and lets customers easily book flights, hotels, or both at the same time.
 
