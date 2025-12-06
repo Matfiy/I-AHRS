@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# --- 1. HANDLING FILES & DIRECTORIES ---
+# Developers: Eric Kalinovskiy & Matfiy Gritsyuk
+
 # Check if receipts folder exists, if not create it
 if [ ! -d "receipts" ]; then
     mkdir receipts
@@ -53,28 +54,31 @@ search_hotels() {
 
   if [ -z "$dest_code" ]; then
     read -p "Enter City/Island Name (e.g., Maui, Cancun, New York, Las Vegas, Tokyo, Rome, Milano, Miami): " city_name
+    
   elif [ "$dest_code" == 'CUN' ]; then
     city_name="Cancun"
+    
   elif [ "$dest_code" == 'OGG' ]; then
     city_name="Maui"
+    
   elif [ "$dest_code" == 'JFK' ]; then
     city_name="New York"
+    
   elif [ "$dest_code" == 'LAS' ]; then
-    city_name='Las Vegas'
+    city_name="Las Vegas"
+    
   elif [ "$dest_code" == 'NRT' ]; then 
-    city_name='Tokyo'
+    city_name="Tokyo"
   elif [ "$dest_code" == 'FCO' ]; then
-    city_name='Rome'
+    city_name="Rome"
+    
   elif [ "$dest_code" == 'MXP' ]; then
-    city_name='Milano' 
+    city_name="Milan"
+    
   elif [ "$dest_code" == 'MIA' ]; then
-    city_name='Miami'
-  else 
-    read -p "Enter City/Island Name (e.g., Maui, Cancun, New York, Las Vegas, Tokyo, Rome, Milano, Miami): " city_name
+    city_name="Miami"
+    
   fi
-
-  # validate input
-  validate_input "$city_name"
 
   echo "Searching hotels in $city_name..."
   echo ""
@@ -135,8 +139,6 @@ generate_receipt() {
   chmod 644 "receipts/booking_$traveler_name.html" # Command 7
 
   # open the created receipt in browser
-  # xdg-open "receipts/booking_$traveler_name.html"
-
   cd receipts
   python3 -m http.server 8000
 
@@ -225,7 +227,7 @@ elif [ "$choice" == "3" ]; then
       hotel_cost=0;
     fi
 
-    booking_detail="$flight_info <br> $hotel_info"
+    booking_detail="$flight_info <br><br> $hotel_info"
 
     # calculate total price
     total_price=$(awk "BEGIN{print $flight_cost + $hotel_cost}")

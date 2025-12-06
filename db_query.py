@@ -1,5 +1,7 @@
 # used to select flights/hotels from the database
 
+# Developers: Eric Kalinovskiy & Matfiy Gritsyuk
+
 import sqlite3
 import sys 
 
@@ -56,12 +58,12 @@ for row in rows:
   # flight format for reciept
   elif table_type == 'flight_id':
       # "Airline Flight: Origin -> Dest (Time) - $Price"
-      print(f"{row_list[7]} Flight: {row_list[1]} -> {row_list[2]} ({row_list[3]} to {row_list[4]}) - Price: ${row_list[6]}")
+      print(f"{row_list[7]} Flight: {row_list[1]} ➡️ {row_list[2]} ({row_list[3]} to {row_list[4]}) - Price: ${row_list[6]}")
 
   # hotel format for reciept
   elif table_type == 'hotel_id':
       # "Hotel Name (City) - Rating - $Price"
-      print(f"Hotel: {row_list[2]} ({row_list[1]}) - {row_list[3]} Stars - Price: ${row_list[4]}")
+      print(f"Hotel: {row_list[2]} ({row_list[1]}) - {row_list[3]} ⭐ - Price: ${row_list[4]}")
 
   # get flight price for total price
   elif table_type == 'flight_price':

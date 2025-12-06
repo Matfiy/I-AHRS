@@ -1,5 +1,7 @@
 # creates the database in sqlite3 and adds data into it
 
+# Developers: Eric Kalinovskiy & Matfiy Gritsyuk
+
 import sqlite3
 import os
 
@@ -63,8 +65,8 @@ flights = [
   ('SMF', 'NRT', '6:30AM', '11:30PM', None, 890, 'Japan Airlines'), #sac to tokyo 
 
   #flights to Italy (FCO / MXP)
-  ('SFO', 'FCO', '3:20PM', '12:10PM', 'Paris (CDG)', 915, 'Air France'), #sf to rome italy)
-  ('LAS', 'MXP', '1:45PM', '11:30PM', 'London (LHR)', 1020, 'British Airways') # las vegas to milan italy 
+  ('SFO', 'FCO', '3:20PM', '12:10PM', 'Paris (CDG)', 915, 'Air France'), #sf to rome italy (1 stop)
+  ('LAS', 'MXP', '1:45PM', '11:30PM', 'London (LHR)', 1020, 'British Airways') # las vegas to milan italy (1 stop)
   
 ]
 

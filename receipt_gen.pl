@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+
+# Developers: Eric Kalinovskiy & Matfiy Gritsyuk
+
 # takes the final booking info and creates a web-viewable reciept
 
 use strict;
@@ -42,7 +45,7 @@ foreach my $name (@travelers) {
 print $fh "  </ul></div>";
 
 # actual flight + hotel details section
-print $fh "  <div class='section-title'>Itinerary Details</div>";
+print $fh "  <div class='section-title'>Itinerary Details | <em>01/08/26 - 01/14/26</em></div>";
 print $fh "  <div class='info-block'>$details</div>";
 
 # total price section
